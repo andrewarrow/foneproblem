@@ -7,5 +7,5 @@ div p-0
       div
         a href=/foneproblem/start
           img src=https://i.imgur.com/R0TJtnO.png rounded-full
-      p text-center
+      p text-center mt-6
         <a class="btn btn-primary" href="/foneproblem/start">Enter</a>

@@ -2,10 +2,10 @@ package main
 
 import (
 	"embed"
+	"foneproblem/app"
 	"math/rand"
 	"os"
 	"time"
-	"foneproblem/app"
 
 	"github.com/andrewarrow/feedback/router"
 )
@@ -39,7 +39,7 @@ func main() {
 		router.EmbeddedAssets = embeddedAssets
 		r := router.NewRouter("DATABASE_URL", embeddedFile)
 		r.Paths["/"] = app.Welcome
-		//r.Paths["foneproblem"] = app.foneproblem
+		r.Paths["foneproblem"] = app.FoneProblem
 		//r.Paths["api"] = app.HandleApi
 		//r.Paths["login"] = app.Login
 		//r.Paths["register"] = app.Register
