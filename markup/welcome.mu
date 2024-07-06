@@ -5,4 +5,7 @@ div p-0
       div text-center text-2xl font-familjen my-3
         do you have a foneproblem?
       div
-        img src=https://i.imgur.com/R0TJtnO.png rounded-full
+        a href=/foneproblem/start
+          img src=https://i.imgur.com/R0TJtnO.png rounded-full
+      p text-center
+        <a class="btn btn-primary" href="/foneproblem/start">Enter</a>
