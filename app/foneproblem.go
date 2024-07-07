@@ -42,11 +42,7 @@ func handleWorkshopsIndex(c *router.Context) {
 	send["items"] = items
 	send["emap"] = eMap
 	send["nrgs"] = models.AllEnergiesHuman()
-	options := []string{}
-	for _, mc := range MajorCities {
-		options = append(options, mc+" August 18, 2024")
-	}
-	send["options"] = options
+	send["options"] = MajorCities
 
 	c.SendContentInLayout("workshops.html", send, 200)
 }

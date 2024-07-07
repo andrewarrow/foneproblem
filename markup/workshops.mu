@@ -11,13 +11,16 @@ div p-0
       div bg-yellow-600 text-black py-3 rounded-lg text-center text-2xl font-familjen my-3
         Workshops
       div mt-9
-        div flex justify-between
+        div flex justify-between items-center
           div
-            select select select-primary
-              {{ range $i, $item := .options }}
-              option
-                {{ $item }}
-              {{ end }}
+            div flex space-x-3 items-center
+              select select select-primary
+                {{ range $i, $item := .options }}
+                option
+                  {{ $item }} 
+                {{ end }}
+              div
+                August 18, 2024
           div
             4 hour event
         div whitespace-nowrap flex justify-center flex-wrap space-x-3 space-y-3 
