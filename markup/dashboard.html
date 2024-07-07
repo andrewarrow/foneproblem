@@ -4,6 +4,9 @@ div p-0
     div w-full md:w-1/2
       div bg-yellow-600 text-black py-3 rounded-lg text-center text-2xl font-familjen my-3
         Dashboard
-      div mt-9
-        div flex justify-between
-          div
+      {{ range $i, $item := .items }}
+        div mt-9
+          div flex justify-between
+            div
+              {{ $item.location }}
+      {{ end }}
