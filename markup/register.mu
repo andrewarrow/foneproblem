@@ -25,3 +25,5 @@ div p-0
             input value=testing123 input input-primary id=password placeholder=password
           div flex justify-center
             input type=submit btn btn-primary value=Save-My-Spot
+          input type=hidden id=guid value={{.guid}}
+          input type=hidden id=nrg value={{.nrg}}
