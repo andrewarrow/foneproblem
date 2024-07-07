@@ -11,10 +11,6 @@ func FoneProblem(c *router.Context, second, third string) {
 		handleWorkshopsIndex(c)
 		return
 	}
-	if second == "register" && third != "" && c.Method == "GET" {
-		handleWorkshopRegister(c, third)
-		return
-	}
 	c.NotFound = true
 }
 
@@ -24,13 +20,6 @@ func handleWorkshopsIndex(c *router.Context) {
 	send := map[string]any{}
 	send["guid"] = "c1e671a5-88a1-4743-bc3d-ee0732424331"
 	c.SendContentInLayout("workshops.html", send, 200)
-}
-
-func handleWorkshopRegister(c *router.Context, id string) {
-
-	c.Title = "register | foneproblem.com"
-	send := map[string]any{}
-	c.SendContentInLayout("register.html", send, 200)
 }
 
 func handleFoneProblemIndex(c *router.Context) {

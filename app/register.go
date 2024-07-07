@@ -2,7 +2,7 @@ package app
 
 import "github.com/andrewarrow/feedback/router"
 
-func FoneProblem(c *router.Context, second, third string) {
+func Register(c *router.Context, second, third string) {
 	if second != "" && third != "" && c.Method == "GET" {
 		handleWorkshopRegister(c, second, third)
 		return
