@@ -15,12 +15,15 @@ div p-0
               August, 18 2024
               div mt-3
                 {{ range $i, $subitem := $nrgs}}
-                  div mt-3
+                  div mt-3 flex space-x-3 items-center
                     {{ if index $emap $subitem.Id }}
-                      div badge badge-primary p-3
+                      div w-32 badge badge-outine p-3
                         {{ $subitem.Label }}
+                      div text-sm text-gray-600
+                        a href=/invite/{{$item.guid}}/{{$subitem.Id}}
+                          Invite Link
                     {{ else }}
-                      div badge badge-secondary p-3
+                      div w-32 badge badge-accent p-3
                         {{ $subitem.Label }}
                       div
                         {{ $user := index $usermap $subitem.Id }}
