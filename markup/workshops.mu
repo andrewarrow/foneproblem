@@ -15,7 +15,7 @@ div p-0
             West LA August, 18 2024
           div
             4 hour event
-        div flex justify-center flex-wrap space-x-3 space-y-3 
+        div whitespace-nowrap flex justify-center flex-wrap space-x-3 space-y-3 
           {{ range $i, $item := .nrgs }}
           {{ if eq $i 0 }}
             div ml-3 mt-3
