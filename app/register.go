@@ -13,8 +13,7 @@ func Register(c *router.Context, second, third string) {
 		return
 	}
 	if second == "register" && third == "" && c.Method == "POST" {
-		router.HandleCreateUserAutoForm(c, "")
-		userGuid := c.Router.LookupUserByToken(cookie.Value)
+		userGuid := router.HandleCreateUserAutoForm(c, "")
 		event_guid := router.GetCookie(c, "event_guid")
 		nrg := router.GetCookie(c, "nrg")
 		cookieToken := c.One("cookie_token", "where guid=$1", userGuid)
