@@ -10,12 +10,15 @@ div p-0
             div
               {{ $item.location }}
               August, 18 2024
+              div bg-r mt-3
+                {{ range $i, $subitem := $item.members }}
+                  div
+                    {{ $subitem.nrg }}
+                  div
+                    {{ $subitem.user.email }}
+                {{ end }}
             div
               4 hour event
-          {{ range $i, $subitem := $item.members }}
-            div
-              {{ $subitem }}
-          {{ end }}
       {{ else }}
         div mt-9
           No events yet.

@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"foneproblem/models"
 
 	"github.com/andrewarrow/feedback/router"
 )
@@ -12,6 +13,10 @@ func handleDashboard(c *router.Context) {
 	items := c.All("event", sql, "")
 	for _, item := range items {
 		subitems := c.All("event_member", "where event_id=$1", "", item["id"])
+		for _, sub := range subitems {
+			sub["nrg_human"] = models.Energy(sub["nrg"])
+		}
+		c.DecorateList(subitems)
 		item["members"] = subitems
 	}
 	send := map[string]any{"items": items}
