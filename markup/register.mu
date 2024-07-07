@@ -7,7 +7,7 @@ div p-0
       div mt-9
         div flex justify-between
           div
-            West LA August, 18 2024
+            August, 18 2024
           div
             4 hour event
         div hidden flex justify-center flex-wrap space-x-3 space-y-3 

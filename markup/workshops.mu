@@ -13,16 +13,17 @@ div p-0
       div mt-9
         div flex justify-between items-center
           div
-            div flex space-x-3 items-center
+            div 
               select select select-primary
                 {{ range $i, $item := .options }}
                 option
                   {{ $item }} 
                 {{ end }}
-              div
-                August 18, 2024
           div
-            4 hour event
+            div
+              August 18, 2024
+            div text-gray-600
+              4 hour event
         div whitespace-nowrap flex justify-center flex-wrap space-x-3 space-y-3 
           {{ range $i, $item := .nrgs }}
           {{ $disabled := "disabled" }}

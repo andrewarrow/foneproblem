@@ -11,7 +11,8 @@ div p-0
         div mt-9
           div flex justify-between
             div
-              {{ $item.location }}
+              span hidden
+                {{ $item.location }}
               August, 18 2024
               div mt-3
                 {{ range $i, $subitem := $nrgs}}
