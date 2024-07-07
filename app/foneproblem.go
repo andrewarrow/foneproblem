@@ -25,8 +25,9 @@ func FoneProblem(c *router.Context, second, third string) {
 func handleWorkshopsIndex(c *router.Context) {
 
 	c.Title = "workshops in your area | foneproblem.com"
+	one := c.One("event", "order by created_at desc")
 	send := map[string]any{}
-	send["guid"] = "c1e671a5-88a1-4743-bc3d-ee0732424331"
+	send["guid"] = one["guid"]
 	c.SendContentInLayout("workshops.html", send, 200)
 }
 
