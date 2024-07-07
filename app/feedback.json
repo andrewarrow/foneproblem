@@ -72,6 +72,43 @@
       ]
     },
     {
+      "name": "event",
+      "fields": [
+        {
+          "name": "title",
+          "flavor": "name"
+        },
+        {
+          "name": "location",
+          "flavor": "name"
+        },
+        {
+          "name": "starts_at",
+          "flavor": "timestamp"
+        }
+      ]
+    },
+    {
+      "name": "event_member",
+      "fields": [
+        {
+          "name": "user_id",
+          "flavor": "int",
+          "index": "yes"
+        },
+        {
+          "name": "event_id",
+          "flavor": "int",
+          "index": "unique_two:event_id,nrg"
+        },
+        {
+          "name": "nrg",
+          "flavor": "name",
+          "index": "yes"
+        }
+      ]
+    },
+    {
       "name": "cookie_token",
       "fields": [
         {
