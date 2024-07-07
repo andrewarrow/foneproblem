@@ -7,6 +7,10 @@ func Register(c *router.Context, second, third string) {
 		handleWorkshopRegister(c, second, third)
 		return
 	}
+	if second == "register" && third == "" && c.Method == "POST" {
+		router.HandleCreateUserAutoForm(c, "")
+		return
+	}
 	c.NotFound = true
 }
 

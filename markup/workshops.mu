@@ -21,13 +21,13 @@ div p-0
             a w-32  btn btn-outline href=/register/{{.guid}}/h18
               Human energy 18-24
           div ml-3 mt-3
-            a w-32  btn btn-outline href=/register/{{.guid}}/f25
+            a w-32  btn btn-disabled href=/register/{{.guid}}/f25
               Female energy 25-29
           div 
             a w-32  btn btn-outline href=/register/{{.guid}}/m25
               Male energy 25-29
           div 
-            a w-32  btn btn-outline href=/register/{{.guid}}/h25
+            a w-32  btn btn-disabled href=/register/{{.guid}}/h25
               Human energy 25-29
           div ml-3 mt-3
             a w-32  btn btn-outline href=/register/{{.guid}}/f30

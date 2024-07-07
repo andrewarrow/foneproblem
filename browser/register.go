@@ -9,15 +9,15 @@ var Document *wasm.Document
 
 func RegisterEvents() {
 	afterRegister := func(id int64) {
-		Global.Location.Set("href", "/foneproblem/start")
+		Global.Location.Set("href", "/core/dashboard")
 	}
 	afterLogin := func(id int64) {
-		Global.Location.Set("href", "{{/homeducky}}/start")
+		Global.Location.Set("href", "/core/start")
 	}
 	if Global.Start == "start.html" {
 	} else if Global.Start == "login.html" {
 		Global.AutoForm("login", "foneproblem", nil, afterLogin)
 	} else if Global.Start == "register.html" {
-		Global.AutoForm("register", "foneproblem", nil, afterRegister)
+		Global.AutoForm("register", "register", nil, afterRegister)
 	}
 }

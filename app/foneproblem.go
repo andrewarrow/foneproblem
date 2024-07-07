@@ -11,6 +11,10 @@ func FoneProblem(c *router.Context, second, third string) {
 		handleWorkshopsIndex(c)
 		return
 	}
+	if second == "dashboard" && third == "" && c.Method == "GET" {
+		handleDashboard(c)
+		return
+	}
 	c.NotFound = true
 }
 
