@@ -7,6 +7,6 @@
     div navbar-center flex hidden md:block
     div navbar-end
       div flex space-x-3
-        a href=/foneproblem/start link link-hover
+        a href=/core/start link link-hover
           FAQ
   {{ end }}

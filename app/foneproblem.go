@@ -7,7 +7,17 @@ func FoneProblem(c *router.Context, second, third string) {
 		handleFoneProblemIndex(c)
 		return
 	}
+	if second == "workshops" && third == "" && c.Method == "GET" {
+		handleWorkshopsIndex(c)
+		return
+	}
 	c.NotFound = true
+}
+func handleWorkshopsIndex(c *router.Context) {
+
+	c.Title = "workshops in your area | foneproblem.com"
+	send := map[string]any{}
+	c.SendContentInLayout("workshops.html", send, 200)
 }
 
 func handleFoneProblemIndex(c *router.Context) {
