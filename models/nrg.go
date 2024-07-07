@@ -3,7 +3,7 @@ package models
 func Energy(nrg any) string {
 	s, _ := nrg.(string)
 
-	first := s[0]
+	first := s[0:1]
 	flavor := ""
 	if first == "m" {
 		flavor = "Male"
