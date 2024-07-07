@@ -1,6 +1,10 @@
 package app
 
-import "github.com/andrewarrow/feedback/router"
+import (
+	"foneproblem/models"
+
+	"github.com/andrewarrow/feedback/router"
+)
 
 func FoneProblem(c *router.Context, second, third string) {
 	if second == "start" && third == "" && c.Method == "GET" {
@@ -28,6 +32,17 @@ func handleWorkshopsIndex(c *router.Context) {
 	one := c.One("event", "order by created_at desc")
 	send := map[string]any{}
 	send["guid"] = one["guid"]
+
+	eMap := models.EnergyMap()
+	items := c.All("event_member", "where event_id=$1 order by nrg", "", one["id"])
+	for _, item := range items {
+		nrg, _ := item["nrg"].(string)
+		eMap[nrg] = false
+	}
+	send["items"] = items
+	send["emap"] = eMap
+	send["nrgs"] = models.AllEnergiesHuman()
+
 	c.SendContentInLayout("workshops.html", send, 200)
 }
 

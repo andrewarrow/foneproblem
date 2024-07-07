@@ -41,6 +41,7 @@ func main() {
 		r.Paths["/"] = app.Welcome
 		r.Paths["core"] = app.FoneProblem
 		r.Paths["register"] = app.Register
+		r.Paths["grab"] = app.Grab
 		r.Paths["invite"] = app.Invite
 		//r.Paths["api"] = app.HandleApi
 		//r.Paths["login"] = app.Login
