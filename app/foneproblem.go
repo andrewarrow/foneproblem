@@ -35,14 +35,17 @@ func handleWorkshopsIndex(c *router.Context) {
 
 	eMap := models.EnergyMap()
 	items := c.All("event_member", "where event_id=$1 order by nrg", "", one["id"])
+	count := 0
 	for _, item := range items {
 		nrg, _ := item["nrg"].(string)
 		eMap[nrg] = false
+		count++
 	}
 	send["items"] = items
 	send["emap"] = eMap
 	send["nrgs"] = models.AllEnergiesHuman()
 	send["options"] = MajorCities
+	send["count"] = count
 
 	c.SendContentInLayout("workshops.html", send, 200)
 }

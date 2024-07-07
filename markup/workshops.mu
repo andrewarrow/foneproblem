@@ -42,7 +42,7 @@ div p-0
           {{ end }}
         div mt-3 flex justify-between text-yellow-600
           div
-            We have 2 of 12 spots reserved.
+            We have {{ .count }} of 12 spots reserved.
           div
             Get your spot today.
         div mt-6 flex justify-between 
