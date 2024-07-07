@@ -9,4 +9,14 @@ div p-0
           div flex justify-between
             div
               {{ $item.location }}
+              August, 18 2024
+            div
+              4 hour event
+          {{ range $i, $subitem := $item.members }}
+            div
+              {{ $subitem }}
+          {{ end }}
+      {{ else }}
+        div mt-9
+          No events yet.
       {{ end }}
