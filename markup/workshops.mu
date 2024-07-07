@@ -59,5 +59,6 @@ div p-0
             the most. But ages are ages, you have to select your correct age.
         div mt-6 flex justify-between 
           div
-            If there is nothing left for your age group, move on to the next event
+            If there is nothing left for your age group, move on to the 
+            <a href="/" class="link">next event</a>
             and register early.
