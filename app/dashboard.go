@@ -14,15 +14,18 @@ func handleDashboard(c *router.Context) {
 
 	for _, item := range items {
 		eMap := models.EnergyMap()
+		userMap := map[string]any{}
 		subitems := c.All("event_member", "where event_id=$1", "", item["id"])
+		c.DecorateList(subitems)
 		for _, sub := range subitems {
 			nrg, _ := sub["nrg"].(string)
 			eMap[nrg] = false
+			userMap[nrg] = sub["user"]
 			sub["nrg_human"] = models.Energy(sub["nrg"])
 		}
-		c.DecorateList(subitems)
 		item["members"] = subitems
 		item["emap"] = eMap
+		item["usermap"] = userMap
 	}
 	send := map[string]any{"items": items, "nrgs": models.AllEnergiesHuman()}
 	c.SendContentInLayout("dashboard.html", send, 200)

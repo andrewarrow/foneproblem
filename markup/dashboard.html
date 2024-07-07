@@ -7,19 +7,13 @@ div p-0
         Dashboard
       {{ range $i, $item := .items }}
         {{ $emap := $item.emap }}
+        {{ $usermap := $item.usermap }}
         div mt-9
           div flex justify-between
             div
               {{ $item.location }}
               August, 18 2024
               div mt-3
-                {{ range $i, $subitem := $item.members }}
-                  div mt-3
-                    div badge badge-primary p-3
-                      {{ $subitem.nrg_human }}
-                    div
-                      {{ $subitem.user.email }}
-                {{ end }}
                 {{ range $i, $subitem := $nrgs}}
                   div mt-3
                     {{ if index $emap $subitem.Id }}
@@ -28,6 +22,9 @@ div p-0
                     {{ else }}
                       div badge badge-secondary p-3
                         {{ $subitem.Label }}
+                      div
+                        {{ $user := index $usermap $subitem.Id }}
+                        {{ $user.email }}
                     {{ end }}
                 {{ end }}
             div
