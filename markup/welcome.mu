@@ -8,4 +8,4 @@ div p-0
         a href=/core/start
           img src=https://i.imgur.com/R0TJtnO.png rounded-full
       p text-center mt-6
-        <a class="btn btn-primary" href="/foneproblem/start">Enter</a>
+        <a class="btn btn-primary" href="/core/start">Enter</a>
