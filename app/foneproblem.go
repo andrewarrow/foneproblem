@@ -22,6 +22,7 @@ func handleWorkshopsIndex(c *router.Context) {
 
 	c.Title = "workshops in your area | foneproblem.com"
 	send := map[string]any{}
+	send["guid"] = "c1e671a5-88a1-4743-bc3d-ee0732424331"
 	c.SendContentInLayout("workshops.html", send, 200)
 }
 
