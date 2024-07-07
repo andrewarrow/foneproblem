@@ -30,7 +30,14 @@ func main() {
 
 	arg := os.Args[1]
 
-	if arg == "import" {
+	if arg == "seed" {
+		r := router.NewRouter("DATABASE_URL", embeddedFile)
+		c := r.ToContext()
+		for _, city := range app.MajorCities {
+			c.Params = map[string]any{}
+			c.Params["location"] = city
+			c.ValidateAndInsert("event")
+		}
 	} else if arg == "render" {
 		router.RenderMarkup()
 	} else if arg == "run" {

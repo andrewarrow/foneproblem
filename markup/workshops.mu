@@ -13,7 +13,11 @@ div p-0
       div mt-9
         div flex justify-between
           div
-            West LA August, 18 2024
+            select select select-primary
+              {{ range $i, $item := .options }}
+              option
+                {{ $item }}
+              {{ end }}
           div
             4 hour event
         div whitespace-nowrap flex justify-center flex-wrap space-x-3 space-y-3 
