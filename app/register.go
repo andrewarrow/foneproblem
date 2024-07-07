@@ -3,6 +3,7 @@ package app
 import (
 	"fmt"
 	"math/rand"
+	"os"
 
 	"github.com/andrewarrow/feedback/router"
 )
@@ -34,6 +35,10 @@ func handleWorkshopRegister(c *router.Context, guid, nrg string) {
 	send := map[string]any{}
 	send["guid"] = guid
 	send["nrg"] = nrg
-	send["email"] = fmt.Sprintf("oneone+test%006d@gmail.com", rand.Intn(999999))
+
+	if os.Getenv("DEV_MODE") == "true" {
+		send["email"] = fmt.Sprintf("oneone+test%006d@gmail.com", rand.Intn(999999))
+		send["password"] = "testing123"
+	}
 	c.SendContentInLayout("register.html", send, 200)
 }

@@ -22,7 +22,7 @@ div p-0
           div
             input value={{.email}} input input-primary id=email placeholder=email autofocus=true
           div
-            input value=testing123 input input-primary id=password placeholder=password
+            input value={{.password}} input input-primary id=password placeholder=password
           div flex justify-center
             input type=submit btn btn-primary value=Save-My-Spot
           input type=hidden id=guid value={{.guid}}
