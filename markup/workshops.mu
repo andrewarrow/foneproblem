@@ -7,7 +7,7 @@ div p-0
       div mt-9
         div flex justify-between
           div
-            West LA August 2024
+            West LA August, 18 2024
           div
             4 hour event
         div flex justify-center flex-wrap space-x-3 space-y-3 
@@ -47,3 +47,17 @@ div p-0
           div 
             a w-32  btn btn-outline href=/core/register/3
               Human Energy 40-49
+        div mt-3 flex justify-between text-yellow-600
+          div
+            We have 2 of 12 spots reserved.
+          div
+            Get your spot today.
+        div mt-6 flex justify-between 
+          div
+            We do groups of 12 with 4 female engery, 4 male engery, and 4 human
+            engery. Anyone is welcome to select which engery they resinate with
+            the most. But ages are ages, you have to select your correct age.
+        div mt-6 flex justify-between 
+          div
+            If there is nothing left for your age group, move on to the next event
+            and register early.
