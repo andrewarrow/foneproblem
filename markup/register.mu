@@ -10,7 +10,7 @@ div p-0
             West LA August, 18 2024
           div
             4 hour event
-        div flex justify-center flex-wrap space-x-3 space-y-3 
+        div hidden flex justify-center flex-wrap space-x-3 space-y-3 
           div ml-3 mt-3
             a w-32  btn btn-selected href=/
               Female energy 18-24
