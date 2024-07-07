@@ -2,6 +2,7 @@ div p-0
   {{ template "navbar" . }}
   {{ $verb := "register" }}
   {{ $guid := .guid }}
+  {{ $emap := .emap }}
   {{ if .user }}
   {{ $verb = "grab" }}
   {{ end }}
@@ -17,13 +18,17 @@ div p-0
             4 hour event
         div whitespace-nowrap flex justify-center flex-wrap space-x-3 space-y-3 
           {{ range $i, $item := .nrgs }}
+          {{ $disabled := "disabled" }}
+          {{ if index $emap $item.Id }}
+            {{ $disabled = "outline" }}
+          {{ end }}
           {{ if eq $i 0 }}
             div ml-3 mt-3
-              a w-32 btn btn-outline href=/{{$verb}}/{{$guid}}/{{$item.Id}}
+              a w-32 btn btn-{{$disabled}} href=/{{$verb}}/{{$guid}}/{{$item.Id}}
                 {{ $item.Label }}
           {{ else }}
             div 
-              a w-32 btn btn-outline href=/{{$verb}}/{{$guid}}/{{$item.Id}}
+              a w-32 btn btn-{{$disabled}} href=/{{$verb}}/{{$guid}}/{{$item.Id}}
                 {{ $item.Label }}
           {{ end }}
           {{ end }}
