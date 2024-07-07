@@ -6,6 +6,7 @@ div p-0
       div bg-yellow-600 text-black py-3 rounded-lg text-center text-2xl font-familjen my-3
         Dashboard
       {{ range $i, $item := .items }}
+        {{ $emap := $item.emap }}
         div mt-9
           div flex justify-between
             div
@@ -21,8 +22,13 @@ div p-0
                 {{ end }}
                 {{ range $i, $subitem := $nrgs}}
                   div mt-3
-                    div badge badge-secondary p-3
-                      {{ $subitem.Label }}
+                    {{ if index $emap $subitem.Id }}
+                      div badge badge-primary p-3
+                        {{ $subitem.Label }}
+                    {{ else }}
+                      div badge badge-secondary p-3
+                        {{ $subitem.Label }}
+                    {{ end }}
                 {{ end }}
             div
               4 hour event

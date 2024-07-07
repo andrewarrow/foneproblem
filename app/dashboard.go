@@ -12,9 +12,8 @@ func handleDashboard(c *router.Context) {
 	sql := fmt.Sprintf("where id in (select event_id from event_members where user_id=%d) order by created_at desc", c.User["id"])
 	items := c.All("event", sql, "")
 
-	eMap := models.EnergyMap()
-
 	for _, item := range items {
+		eMap := models.EnergyMap()
 		subitems := c.All("event_member", "where event_id=$1", "", item["id"])
 		for _, sub := range subitems {
 			nrg, _ := sub["nrg"].(string)
@@ -23,6 +22,7 @@ func handleDashboard(c *router.Context) {
 		}
 		c.DecorateList(subitems)
 		item["members"] = subitems
+		item["emap"] = eMap
 	}
 	send := map[string]any{"items": items, "nrgs": models.AllEnergiesHuman()}
 	c.SendContentInLayout("dashboard.html", send, 200)
