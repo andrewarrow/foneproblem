@@ -1,5 +1,23 @@
 package models
 
+var AllEnergies = []string{"f18", "m18", "h18", "f25", "m25", "h25", "f30", "m30", "h30", "f40", "m40", "h40"}
+
+func AllEnergiesHuman() []string {
+	items := []string{}
+	for _, ngr := range AllEnergies {
+		items = append(items, Energy(ngr))
+	}
+	return items
+}
+func EnergyMap() map[string]bool {
+	m := map[string]bool{}
+
+	for _, ngr := range AllEnergies {
+		m[ngr] = true
+	}
+	return m
+}
+
 func Energy(nrg any) string {
 	s, _ := nrg.(string)
 
