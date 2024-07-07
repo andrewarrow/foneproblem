@@ -4,7 +4,7 @@ module foneproblem
 
 go 1.21.0
 
-require github.com/andrewarrow/feedback v0.0.0-20240707133140-a098673d3e3a
+require github.com/andrewarrow/feedback v0.0.0-20240707180228-0380bd53f4c5
 
 require (
 	cloud.google.com/go v0.112.0 // indirect

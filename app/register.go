@@ -14,13 +14,13 @@ func Register(c *router.Context, second, third string) {
 	}
 	if second == "register" && third == "" && c.Method == "POST" {
 		router.HandleCreateUserAutoForm(c, "")
-		cookie, _ := c.Request.Cookie("user_v2")
-		c.User = c.Router.LookupUserByToken(cookie.Value)
+		userGuid := c.Router.LookupUserByToken(cookie.Value)
 		event_guid := router.GetCookie(c, "event_guid")
 		nrg := router.GetCookie(c, "nrg")
+		cookieToken := c.One("cookie_token", "where guid=$1", userGuid)
 
 		event := c.One("event", "where guid=$1", event_guid)
-		c.FreeFormUpdate("insert into event_members (user_id, event_id, nrg) values ($1, $2, $3)", c.User["id"], event["id"], nrg)
+		c.FreeFormUpdate("insert into event_members (user_id, event_id, nrg) values ($1, $2, $3)", cookieToken["user_id"], event["id"], nrg)
 
 		return
 	}
