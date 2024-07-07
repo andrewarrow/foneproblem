@@ -12,11 +12,38 @@ div p-0
             4 hour event
         div flex justify-center flex-wrap space-x-3 space-y-3
           div ml-3 mt-3
-            a w-32 h-64 btn-lg text-gray-600 btn btn-outline href=/roadmapp/register/3
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
               Female Energy 18-24
           div 
-            a w-32 h-64 btn-lg text-gray-600 btn btn-outline href=/roadmapp/register/3
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
               Male Energy 18-24
           div 
-            a w-32 h-64 btn-lg text-gray-600 btn btn-outline href=/roadmapp/register/3
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
               Human Energy 18-24
+          div ml-3 mt-3
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Female Energy 25-29
+          div 
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Male Energy 25-29
+          div 
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Human Energy 25-29
+          div ml-3 mt-3
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Female Energy 30-39
+          div 
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Male Energy 30-39
+          div 
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Human Energy 30-39
+          div ml-3 mt-3
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Female Energy 40-49
+          div 
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Male Energy 40-49
+          div 
+            a w-32  text-gray-600 btn btn-outline href=/core/register/3
+              Human Energy 40-49
