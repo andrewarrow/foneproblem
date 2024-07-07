@@ -1,11 +1,17 @@
 package models
 
+type NrgPair struct {
+	Id    string
+	Label string
+}
+
 var AllEnergies = []string{"f18", "m18", "h18", "f25", "m25", "h25", "f30", "m30", "h30", "f40", "m40", "h40"}
 
-func AllEnergiesHuman() []string {
-	items := []string{}
-	for _, ngr := range AllEnergies {
-		items = append(items, Energy(ngr))
+func AllEnergiesHuman() []NrgPair {
+	items := []NrgPair{}
+	for _, nrg := range AllEnergies {
+		p := NrgPair{nrg, Energy(nrg)}
+		items = append(items, p)
 	}
 	return items
 }
