@@ -1,6 +1,11 @@
 package app
 
-import "github.com/andrewarrow/feedback/router"
+import (
+	"fmt"
+	"math/rand"
+
+	"github.com/andrewarrow/feedback/router"
+)
 
 func Register(c *router.Context, second, third string) {
 	if second != "" && third != "" && c.Method == "GET" {
@@ -21,5 +26,6 @@ func handleWorkshopRegister(c *router.Context, guid, nrg string) {
 
 	c.Title = "register | foneproblem.com"
 	send := map[string]any{}
+	send["email"] = fmt.Sprintf("oneone+test%006d@gmail.com", rand.Intn(999999))
 	c.SendContentInLayout("register.html", send, 200)
 }

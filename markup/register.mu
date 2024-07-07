@@ -20,8 +20,8 @@ div p-0
       div mt-9 flex justify-center
         form mt-6 space-y-3 id=register
           div
-            input input input-primary id=email placeholder=email autofocus=true
+            input value={{.email}} input input-primary id=email placeholder=email autofocus=true
           div
-            input input input-primary id=password placeholder=password
+            input value=testing123 input input-primary id=password placeholder=password
           div flex justify-center
             input type=submit btn btn-primary value=Save-My-Spot
