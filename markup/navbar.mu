@@ -7,6 +7,13 @@
     div navbar-center flex hidden md:block
     div navbar-end
       div flex space-x-3
-        a href=/core/start link link-hover
-          FAQ
+        {{ if .user }}
+          a href=/core/dashboard
+            Dashboard
+          a href=/ id=logout
+            Logout
+        {{ else }}
+          a href=/core/workshops link link-hover
+            Register
+        {{ end }}
   {{ end }}

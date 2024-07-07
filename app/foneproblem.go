@@ -15,6 +15,10 @@ func FoneProblem(c *router.Context, second, third string) {
 		handleDashboard(c)
 		return
 	}
+	if second == "logout" && third == "" && c.Method == "DELETE" {
+		router.DestroySession(c)
+		return
+	}
 	c.NotFound = true
 }
 
