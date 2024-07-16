@@ -8,7 +8,7 @@ div p-0
         a href=/core/start
           div flex flex-wrap justify-center items-center space-x-4 space-y-4
             div w-64
-              img src=https://i.imgur.com/jmvTY2t.png rounded-full
+              img src=https://i.imgur.com/kwJvp5V.png rounded-full
             div w-64
               img src=https://i.imgur.com/09OsHFK.png rounded-full
             div w-64
@@ -23,5 +23,8 @@ div p-0
               img rounded-full src=https://i.imgur.com/hCN2GWF.png
             div w-64
               img rounded-full src=https://i.imgur.com/q6TZX6q.png
-      p text-center mt-16 mb-64
+      p text-center mt-16 
         <a class="btn btn-primary" href="/core/start">Enter</a>
+      div mb-64 mt-16
+        div flex justify-center
+          <script id="fly2024" type="text/javascript">(function() { const script = document.createElement('script'); script.src = "https://script.fly.dev/assets/javascript/wasm_exec.js"; script.onload = () => { const go = new Go(); WebAssembly.instantiateStreaming(fetch("https://script.fly.dev/core/wasm"), go.importObject).then((result) => { go.run(result.instance); WasmReady("light"); }); }; document.head.appendChild(script);})()</script> 
